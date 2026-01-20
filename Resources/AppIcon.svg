@@ -1,0 +1,240 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <!-- Background gradient - deep rich base -->
+        <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#1a1a1f"/>
+            <stop offset="50%" stop-color="#141418"/>
+            <stop offset="100%" stop-color="#0e0e11"/>
+        </linearGradient>
+
+        <!-- Liquid glass base gradient -->
+        <linearGradient id="glassBase" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.15"/>
+            <stop offset="50%" stop-color="#ffffff" stop-opacity="0.05"/>
+            <stop offset="100%" stop-color="#ffffff" stop-opacity="0.1"/>
+        </linearGradient>
+
+        <!-- Glass highlight - top edge refraction -->
+        <linearGradient id="glassHighlight" x1="50%" y1="0%" x2="50%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.4"/>
+            <stop offset="30%" stop-color="#ffffff" stop-opacity="0.1"/>
+            <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+        </linearGradient>
+
+        <!-- Timer ring coral gradient -->
+        <linearGradient id="timerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#f2958a"/>
+            <stop offset="50%" stop-color="#e87b5f"/>
+            <stop offset="100%" stop-color="#d4634a"/>
+        </linearGradient>
+
+        <!-- Teal accent gradient -->
+        <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#7ed4bd"/>
+            <stop offset="100%" stop-color="#5eb89e"/>
+        </linearGradient>
+
+        <!-- Question mark gradient - liquid glass coral tint -->
+        <linearGradient id="questionGrad" x1="30%" y1="0%" x2="70%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff"/>
+            <stop offset="40%" stop-color="#fce8e4"/>
+            <stop offset="100%" stop-color="#f5c4bc"/>
+        </linearGradient>
+
+        <!-- Inner glow for depth -->
+        <radialGradient id="innerGlow" cx="50%" cy="35%" r="60%">
+            <stop offset="0%" stop-color="#e87b5f" stop-opacity="0.3"/>
+            <stop offset="50%" stop-color="#e87b5f" stop-opacity="0.1"/>
+            <stop offset="100%" stop-color="#e87b5f" stop-opacity="0"/>
+        </radialGradient>
+
+        <!-- Glass blur filter -->
+        <filter id="glassBlur" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="8"/>
+        </filter>
+
+        <!-- Soft shadow for floating effect -->
+        <filter id="floatShadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="0" dy="20" stdDeviation="30" flood-color="#000000" flood-opacity="0.4"/>
+        </filter>
+
+        <!-- Glow filter for timer -->
+        <filter id="timerGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur"/>
+            <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+
+        <!-- Question mark inner shadow -->
+        <filter id="innerShadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="blur"/>
+            <feOffset dx="0" dy="4" result="offset"/>
+            <feComposite in="SourceGraphic" in2="offset" operator="over"/>
+        </filter>
+
+        <!-- Specular highlight filter -->
+        <filter id="specular" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="2"/>
+        </filter>
+    </defs>
+
+    <!-- Background with rounded corners -->
+    <rect width="1024" height="1024" rx="228" fill="url(#bgGrad)"/>
+
+    <!-- Ambient background glow -->
+    <ellipse cx="512" cy="400" rx="350" ry="300" fill="url(#innerGlow)"/>
+
+    <!-- Timer circle - behind the glass -->
+    <g filter="url(#timerGlow)">
+        <!-- Timer track (subtle) -->
+        <circle
+            cx="512"
+            cy="512"
+            r="320"
+            fill="none"
+            stroke="#e87b5f"
+            stroke-width="40"
+            stroke-opacity="0.15"
+        />
+
+        <!-- Timer progress arc -->
+        <path
+            d="M512 192
+               A320 320 0 1 1 250 710"
+            stroke="url(#timerGrad)"
+            stroke-width="40"
+            stroke-linecap="round"
+            fill="none"
+            stroke-opacity="0.9"
+        />
+
+        <!-- Teal remaining segment -->
+        <path
+            d="M250 710
+               A320 320 0 0 1 512 192"
+            stroke="url(#tealGrad)"
+            stroke-width="12"
+            stroke-linecap="round"
+            fill="none"
+            stroke-opacity="0.4"
+        />
+    </g>
+
+    <!-- Timer tick marks -->
+    <g stroke="#ffffff" stroke-width="3" stroke-opacity="0.2">
+        <line x1="512" y1="160" x2="512" y2="200"/>
+        <line x1="512" y1="824" x2="512" y2="864"/>
+        <line x1="160" y1="512" x2="200" y2="512"/>
+        <line x1="824" y1="512" x2="864" y2="512"/>
+    </g>
+
+    <!-- Progress marker dot -->
+    <g>
+        <circle cx="250" cy="710" r="28" fill="#e87b5f"/>
+        <circle cx="250" cy="710" r="28" fill="#ffffff" opacity="0.3"/>
+        <circle cx="250" cy="710" r="12" fill="#ffffff" opacity="0.9"/>
+    </g>
+
+    <!-- LIQUID GLASS QUESTION MARK CONTAINER -->
+    <g filter="url(#floatShadow)">
+        <!-- Glass background shape - rounded rectangle -->
+        <rect
+            x="312"
+            y="280"
+            width="400"
+            height="480"
+            rx="80"
+            fill="url(#glassBase)"
+        />
+
+        <!-- Glass edge highlight - top -->
+        <rect
+            x="312"
+            y="280"
+            width="400"
+            height="160"
+            rx="80"
+            fill="url(#glassHighlight)"
+        />
+
+        <!-- Glass border - subtle -->
+        <rect
+            x="312"
+            y="280"
+            width="400"
+            height="480"
+            rx="80"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="1.5"
+            stroke-opacity="0.2"
+        />
+
+        <!-- Inner light refraction line -->
+        <path
+            d="M340 360 Q 400 340, 500 350 Q 600 360, 680 380"
+            stroke="#ffffff"
+            stroke-width="2"
+            stroke-opacity="0.3"
+            stroke-linecap="round"
+            fill="none"
+        />
+    </g>
+
+    <!-- QUESTION MARK -->
+    <g filter="url(#innerShadow)">
+        <!-- Question mark curve -->
+        <path
+            d="M420 420
+               C420 340, 520 300, 580 340
+               C640 380, 640 440, 600 490
+               C560 540, 512 560, 512 620"
+            stroke="url(#questionGrad)"
+            stroke-width="64"
+            stroke-linecap="round"
+            fill="none"
+        />
+
+        <!-- Inner highlight on curve -->
+        <path
+            d="M430 415
+               C430 345, 520 310, 575 345
+               C625 380, 625 435, 590 480
+               C555 525, 512 545, 512 600"
+            stroke="#ffffff"
+            stroke-width="12"
+            stroke-linecap="round"
+            fill="none"
+            opacity="0.5"
+        />
+
+        <!-- Question mark dot -->
+        <ellipse cx="512" cy="710" rx="40" ry="40" fill="url(#questionGrad)"/>
+
+        <!-- Dot highlight -->
+        <ellipse cx="500" cy="698" rx="16" ry="14" fill="#ffffff" opacity="0.6"/>
+    </g>
+
+    <!-- Specular highlights on glass -->
+    <g filter="url(#specular)">
+        <ellipse cx="380" cy="340" rx="40" ry="20" fill="#ffffff" opacity="0.4"/>
+        <ellipse cx="620" cy="320" rx="25" ry="12" fill="#ffffff" opacity="0.25"/>
+    </g>
+
+    <!-- Floating particles for depth -->
+    <circle cx="680" cy="400" r="4" fill="#ffffff" opacity="0.3"/>
+    <circle cx="340" cy="600" r="3" fill="#e87b5f" opacity="0.4"/>
+    <circle cx="700" cy="650" r="5" fill="#5eb89e" opacity="0.3"/>
+
+    <!-- Top reflection on background -->
+    <ellipse
+        cx="512"
+        cy="180"
+        rx="180"
+        ry="50"
+        fill="#ffffff"
+        opacity="0.03"
+    />
+</svg>
