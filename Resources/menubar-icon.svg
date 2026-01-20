@@ -1,0 +1,20 @@
+<svg width="36" height="36" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+    <!-- Simplified menu bar icon - broken circle for timer/focus -->
+    <!-- Black on transparent for template rendering -->
+
+    <!-- Main ring - broken circle -->
+    <path
+        d="M18 4
+           A14 14 0 1 1 7.5 27"
+        stroke="#000000"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        fill="none"
+    />
+
+    <!-- Focus dot at the break -->
+    <circle cx="7.5" cy="27" r="2" fill="#000000"/>
+
+    <!-- Small accent dot at top -->
+    <circle cx="18" cy="4" r="1.5" fill="#000000" opacity="0.6"/>
+</svg>

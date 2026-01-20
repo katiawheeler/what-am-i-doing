@@ -1,0 +1,64 @@
+<svg width="660" height="400" viewBox="0 0 660 400" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <!-- Light background gradient -->
+        <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#fafafa"/>
+            <stop offset="50%" stop-color="#f5f5f5"/>
+            <stop offset="100%" stop-color="#efefef"/>
+        </linearGradient>
+
+        <!-- Subtle coral glow -->
+        <radialGradient id="centerGlow" cx="50%" cy="45%" r="60%">
+            <stop offset="0%" stop-color="#e87b5f" stop-opacity="0.06"/>
+            <stop offset="60%" stop-color="#e87b5f" stop-opacity="0.02"/>
+            <stop offset="100%" stop-color="#e87b5f" stop-opacity="0"/>
+        </radialGradient>
+
+        <!-- Arrow gradient -->
+        <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#e87b5f" stop-opacity="0.7"/>
+            <stop offset="50%" stop-color="#e87b5f"/>
+            <stop offset="100%" stop-color="#d4634a"/>
+        </linearGradient>
+
+        <!-- Teal accent -->
+        <linearGradient id="tealAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#5eb89e" stop-opacity="0.4"/>
+            <stop offset="100%" stop-color="#5eb89e" stop-opacity="0.15"/>
+        </linearGradient>
+    </defs>
+
+    <!-- Background -->
+    <rect width="660" height="400" fill="url(#bgGrad)"/>
+
+    <!-- Ambient glow -->
+    <ellipse cx="330" cy="180" rx="300" ry="200" fill="url(#centerGlow)"/>
+
+    <!-- Decorative orbital rings -->
+    <ellipse cx="330" cy="200" rx="280" ry="160" fill="none" stroke="#e87b5f" stroke-width="0.5" stroke-opacity="0.08"/>
+    <ellipse cx="330" cy="200" rx="220" ry="120" fill="none" stroke="#e87b5f" stroke-width="0.5" stroke-opacity="0.1"/>
+
+    <!-- Teal decorative arc top-right -->
+    <path d="M 500 60 A 120 120 0 0 1 620 140" fill="none" stroke="url(#tealAccent)" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Teal decorative arc bottom-left -->
+    <path d="M 40 300 A 100 100 0 0 0 120 360" fill="none" stroke="url(#tealAccent)" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Decorative dots -->
+    <circle cx="580" cy="80" r="3" fill="#5eb89e" opacity="0.5"/>
+    <circle cx="60" cy="340" r="3" fill="#d4a94d" opacity="0.5"/>
+    <circle cx="600" cy="320" r="2" fill="#e87b5f" opacity="0.4"/>
+    <circle cx="50" cy="70" r="2" fill="#e87b5f" opacity="0.35"/>
+
+    <!-- Arrow -->
+    <g transform="translate(280, 190)">
+        <!-- Arrow body -->
+        <path d="M 0 10 L 70 10 L 70 0 L 100 15 L 70 30 L 70 20 L 0 20 Z"
+              fill="url(#arrowGrad)"/>
+        <!-- Arrow glow -->
+        <ellipse cx="50" cy="15" rx="40" ry="12" fill="#e87b5f" opacity="0.1"/>
+    </g>
+
+    <!-- Subtle bottom border -->
+    <rect x="0" y="399" width="660" height="1" fill="#e0e0e0"/>
+</svg>
